@@ -1,0 +1,41 @@
+{{#each .}}
+<tr class="row"
+    id="announcer-{{TwitterUserId}}">
+    <td class="col-xs-3">
+        <a  href="https://twitter.com/intent/user?user_id={{TwitterUserId}}"
+            target="_blank">
+            {{ defaultTwitterName TwitterUserName }}
+        </a>
+
+    </td>
+
+    <td class="col-xs-3">{{TwitterUserId }}</td>
+
+    <td class="col-xs-2 text-center">
+        <i  class="{{ checkedStateClass CollectRetweets }}"
+            title="Collect retweets">
+        </i>
+    </td>
+
+    <td class="col-xs-2 text-center">
+        <i class="{{ checkedStateClass IgnoreDomainCheck }}"
+           title="Ignore domain check">
+        </i>
+    </td>
+
+    <td class="col-xs-2 text-center" >
+    {{#if HasSegmentMappings}}
+        <i class="icon-warning-sign text-muted"
+           title="{{ deleteAnnouncerTitle }}">
+        </i>
+    {{else}}
+        <a  class="btn btn-xs btn-danger"
+            data-target="#announcer-{{TwitterUserId}}"
+            data-delete="announcer"
+            title="{{deleteAnnouncerTitle }}"
+            href="/Manage/Announcers/Delete/{{TwitterUserId}}">Remove
+        </a>
+    {{/if}}
+    </td>
+</tr>
+{{/each}}

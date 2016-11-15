@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-xs-8 col-lg-9">
+        <h3 class="nomargin-top">{{heading}}</h3>
+        <p>{{summary}}</p>
+    </div>
+    {{#if buttonEnabled}}
+    <div class="col-xs-4 col-lg-3">
+        <a class="btn btn-block btn-lg btn-default"
+           data-toggle="{{buttonToggle}}"
+           data-target="{{buttonTarget}}"
+           href="{{buttonUrl}}">
+            {{buttonLabel}}
+        </a>
+    </div><!-- /.col-* -->
+    {{/if}}
+</div><!-- /.row -->
